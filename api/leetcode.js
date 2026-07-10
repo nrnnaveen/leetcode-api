@@ -34,6 +34,10 @@ export default async function handler(req, res) {
 
   const json = await response.json();
 
+  console.log(JSON.stringify(json, null, 2));
+
+  return res.status(200).json(json);
+
   const stats =
     json?.data?.matchedUser?.submitStats?.acSubmissionNum;
 
